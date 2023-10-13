@@ -2,11 +2,15 @@ import { FC } from "react";
 import { Menu } from "../../model/types";
 import { Link } from "react-router-dom";
 
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(' ')
+}
+
 const Menu: FC<Menu> = ({ links }: Menu) => {
   return (
     <>
       <div className="navbar-start">
-        <div className="dropdown">
+        <div className="dropdown md:hidden">
           <label tabIndex={0} className="btn-ghost btn-circle btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -33,6 +37,23 @@ const Menu: FC<Menu> = ({ links }: Menu) => {
               </li>
             ))}
           </ul>
+        </div>
+        <div className="hidden ml-6 md:block">
+          <div className="flex space-x-4">
+            {links.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className={classNames(
+                  item.current ? 'text-primary' : 'hover:text-primary',
+                  'rounded-md sm:px-1 md:px-3 py-2 text-sm font-medium'
+                )}
+                aria-current={item.current ? 'page' : undefined}
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </>

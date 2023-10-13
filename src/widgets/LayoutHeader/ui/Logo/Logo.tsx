@@ -1,10 +1,9 @@
-import { FC } from "react";
-import { Logo } from "@/widgets/LayoutHeader/model/types";
-
-const Logo: FC<Logo> = ({ logoName }: Logo) => {
+const Logo = () => {
   return (
     <div className="navbar-center">
-      <a className="btn-ghost btn text-xl normal-case">{logoName}</a>
+      <a className="btn-ghost btn text-xl normal-case">
+        <img src="/images/Logo.png" />
+      </a>
     </div>
   );
 };

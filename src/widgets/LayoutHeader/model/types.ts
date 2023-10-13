@@ -1,7 +1,7 @@
-export type Logo = {
-  logoName: string;
+export type Menu = {
+  links: { name: string; href: string, current: boolean }[];
 };
 
-export type Menu = {
-  links: { name: string; href: string }[];
-};
+export type MyAccount = {
+  info: { photo: string, name: string, email: string }
+}
