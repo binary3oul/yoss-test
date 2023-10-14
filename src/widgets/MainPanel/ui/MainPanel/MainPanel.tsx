@@ -1,7 +1,11 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import Card from "../Card"
+import SlidingPane from "react-sliding-pane"
+import "react-sliding-pane/dist/react-sliding-pane.css";
+import { SiderPanel } from "@/widgets/SiderPanel"
 
 const MainPanel: FC = () => {
+  const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const freelancers = [
     {
       photo: "/photo/1.png",
@@ -33,33 +37,44 @@ const MainPanel: FC = () => {
     },
   ]
   return (
-      <div className="w-full flex flex-col gap-5 items-center mt-5">
-        <div className="flex justify-between w-4/5">
-          <div className="flex gap-1 px-4 py-2 border-[1px] bg-white border-gray-300 rounded-lg cursor-pointer">
-            <img src="/icons/filter-lines.svg" />Filters
-          </div>
-          <div className="flex gap-2 w-4/5 justify-end items-center">
-            <strong>Sort By</strong>
-            <select className="select select-bordered max-w-xs">
-              <option>Relevance</option>
-              <option>Greedo</option>
-            </select>
-          </div>
-        </div>
-        
-        {freelancers.map((freelancer) => 
-          <Card { ...freelancer } />
-        )}
-        <div className="flex gap-0">
-          <button className="p-3 btn w-10 bg-[#9E77ED] hover:bg-purple-400 text-white">1</button>
-          <button className="p-3 btn w-10 bg-white border-none">2</button>
-          <button className="p-3 btn w-10 bg-white border-none">3</button>
-          <button className="p-3 btn w-10 bg-white border-none">...</button>
-          <button className="p-3 btn w-10 bg-white border-none">8</button>
-          <button className="p-3 btn w-10 bg-white border-none">9</button>
-          <button className="p-3 btn w-10 bg-white border-none">10</button>
+    <div className="w-full flex flex-col gap-5 items-center mt-5">
+      <div className="flex justify-between w-4/5 lg:justify-end">
+        <button className="flex gap-1 px-4 py-2 border-[1px] bg-white border-gray-300 rounded-lg cursor-pointer items-center lg:hidden" 
+          onClick={() => {setIsFiltersOpen(true)}}>
+          <img src="/icons/filter-lines.svg" />Filters
+        </button>
+        <div className="flex gap-2 w-4/5 justify-end items-center">
+          <strong>Sort By</strong>
+          <select className="select select-bordered max-w-xs">
+            <option>Relevance</option>
+            <option>Greedo</option>
+          </select>
         </div>
       </div>
+      
+      {freelancers.map((freelancer, index) => 
+        <Card { ...freelancer } key={index} />
+      )}
+      <div className="flex gap-0">
+        <button className="p-3 btn w-10 bg-[#9E77ED] hover:bg-purple-400 text-white">1</button>
+        <button className="p-3 btn w-10 bg-white border-none">2</button>
+        <button className="p-3 btn w-10 bg-white border-none">3</button>
+        <button className="p-3 btn w-10 bg-white border-none">...</button>
+        <button className="p-3 btn w-10 bg-white border-none">8</button>
+        <button className="p-3 btn w-10 bg-white border-none">9</button>
+        <button className="p-3 btn w-10 bg-white border-none">10</button>
+      </div>
+      <SlidingPane
+        closeIcon={<div>&times;</div>}
+        isOpen={isFiltersOpen}
+        title="Filters"
+        from="bottom"
+        width="100%"
+        onRequestClose={() => setIsFiltersOpen(false)}
+      >
+        <SiderPanel />
+      </SlidingPane>
+    </div>
   )
 };
 

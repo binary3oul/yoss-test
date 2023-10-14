@@ -43,7 +43,7 @@ const AccordionItem: FC<AccordionItem> = ({ data }: AccordionItem) => {
           active ? "block text-violet-600" : "hidden text-zinc-500"
         }`}
       >
-        <p className="py-3 text-base leading-relaxed text-body-color flex flex-col gap-3">{text}</p>
+        <div className="py-3 text-base leading-relaxed text-body-color flex flex-col gap-3">{text}</div>
       </div>
     </div>
   );

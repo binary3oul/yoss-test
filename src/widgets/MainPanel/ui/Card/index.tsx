@@ -21,7 +21,7 @@ const Card: FC<Card> = ({name, rate, coverLetter, photo}) => {
             <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#FEC84B]" />
             <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#FEC84B]" />
             <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#FEC84B]" />
-            <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#FEC84B]" checked/>
+            <input type="radio" name="rating-2" className="mask mask-star-2 bg-[#FEC84B]" defaultChecked={true}/>
           </div>
         </div>
         <p className="text-sm">{coverLetter}</p>

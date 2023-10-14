@@ -5,7 +5,7 @@ import Schedule from "../Care/Schedule"
 
 const SiderPanel: FC = () => {
   return (
-    <div className="w-96 min-w-96 p-4 pb-9 lg:block hidden bg-[#9E77ED1F] shadow-[4px_0_16px_2px_rgba(0,0,0,0.03)]">
+    <div className="p-4 pb-9 bg-[#9E77ED1F] shadow-[4px_0_16px_2px_rgba(0,0,0,0.03)]">
       <div className="relative">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">

@@ -19,12 +19,10 @@
   .slider__track {
     background-color: #ced4da;
     width: 100%;
-    z-index: 1;
   }
   
   .slider__range {
     background-color: #7f56d9;
-    z-index: 2;
   }
   
   .slider__left-value,
@@ -57,7 +55,7 @@
     outline: none;
   }
   
-  .thumb--zindex-3 {
+  /* .thumb--zindex-3 {
     z-index: 3;
   }
   
@@ -67,7 +65,7 @@
   
   .thumb--zindex-5 {
     z-index: 5;
-  }
+  } */
   
   /* For Chrome browsers */
   .thumb::-webkit-slider-thumb {

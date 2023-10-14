@@ -4,12 +4,12 @@ import { MainPanel } from "@/widgets/MainPanel"
 
 const Home: FC = () => {
   return (
-    <>
-      <div className="flex">
+    <div className="flex">
+      <div className="lg:block hidden w-96 min-w-96">
         <SiderPanel />
-        <MainPanel />
       </div>
-    </>
+      <MainPanel />
+    </div>
   );
 };
 
