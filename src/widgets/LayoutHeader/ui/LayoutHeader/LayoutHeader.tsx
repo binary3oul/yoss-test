@@ -7,7 +7,7 @@ const LayoutHeader: FC = () => {
   return (
     <>
       <header>
-        <nav className="navbar bg-base-100 flex-col sm:flex-row">
+        <nav className="navbar bg-base-100 flex-col sm:flex-row shadow-md">
           <div>
           <Logo />
           <Menu

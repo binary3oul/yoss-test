@@ -38,7 +38,7 @@ const Menu: FC<Menu> = ({ links }: Menu) => {
             ))}
           </ul>
         </div>
-        <div className="hidden ml-6 lg:block">
+        <div className="hidden lg:block w-72">
           <div className="flex space-x-2">
             {links.map((item) => (
               <a

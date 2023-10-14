@@ -1,0 +1,1 @@
+export type Card = { photo: string; name: string; score: string; rate: number; coverLetter: string; };
