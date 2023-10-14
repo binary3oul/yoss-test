@@ -9,11 +9,12 @@ const Accordion: FC<Accordion> = ({ data }: Accordion) => {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             {
-              data.map(item => (
+              data.map((item, idx) => (
               <AccordionItem
                 data={
                   item
                 }
+                key = {idx}
               />))
             }
           </div>

@@ -10,7 +10,7 @@ const Menu: FC<Menu> = ({ links }: Menu) => {
   return (
     <>
       <div className="navbar-start">
-        <div className="dropdown md:hidden">
+        <div className="dropdown lg:hidden">
           <label tabIndex={0} className="btn-ghost btn-circle btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -38,14 +38,14 @@ const Menu: FC<Menu> = ({ links }: Menu) => {
             ))}
           </ul>
         </div>
-        <div className="hidden ml-6 md:block">
+        <div className="hidden ml-6 lg:block">
           <div className="flex space-x-4">
             {links.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 className={classNames(
-                  item.current ? 'text-primary' : 'hover:text-primary',
+                  item.current ? 'text-violet-600' : 'hover:text-violet-600',
                   'rounded-md sm:px-1 md:px-3 py-2 text-sm font-medium'
                 )}
                 aria-current={item.current ? 'page' : undefined}
